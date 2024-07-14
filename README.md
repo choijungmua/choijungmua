@@ -1,9 +1,16 @@
 
 <div>
   
-Hi There! I'm a **FrontEnd Developer** using VS Code!✈️ Sometimes I develop SPA⚡ Web applications using **Next.js and React**👊.  
-I love creating interactive and **dynamic user experiences** with modern web technologies.
+👋Hi There! I'm a **FrontEnd Developer** using VS Code!✈️ Sometimes I develop SPA⚡ Web applications using **Next.js and React**👊.  
+I love💙 creating interactive🌼 and 👺**dynamic user experiences** with modern web technologies.🔎
 </div>
+
+<div align="center">
+  
+![githubprofile](https://github.com/user-attachments/assets/192c124e-6536-4972-8056-944c259d49ac)
+</div>
+
+
 
 <div align="right">
   
