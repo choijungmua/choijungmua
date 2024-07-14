@@ -1,7 +1,4 @@
-<div>
-<br/>
-<br/>
-<br/>
+<div align="center">
 
 
   
@@ -12,8 +9,9 @@ I love💙 creating interactive🌼 and 👺**dynamic user experiences** with mo
   
   ![216649417-9acc58df-9186-4132-ad43-819a57babb67](https://github.com/user-attachments/assets/9ff4e2d5-bb7e-4500-9d32-771e9304ae6f)
 
+ ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=choijungmua&show_icons=true&theme=calm_pink)
   
-  ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=choijungmua&show_icons=true&theme=calm_pink)
+ 
 </div>
 
 
@@ -48,9 +46,10 @@ I love💙 creating interactive🌼 and 👺**dynamic user experiences** with mo
 ![Recoil](https://img.shields.io/badge/Recoil-3578E5?style=flat-square&logo=recoil&logoColor=white)
 ![styled-components](https://img.shields.io/badge/styled--components-DB7093?style=flat-square&logo=styledcomponents&logoColor=white)
 
-<div align="right">
+
   
+
+ 
 ![241763891-7bb1e704-6026-48f9-8435-2f4d40101348](https://github.com/user-attachments/assets/9e10f5d2-2ff4-4f98-a988-d50eb6c0b4a8)
-</div>
 </div>
 
