@@ -11,7 +11,7 @@ I love💙 creating interactive🌼 and 👺**dynamic user experiences** with mo
   
   ![216649417-9acc58df-9186-4132-ad43-819a57babb67](https://github.com/user-attachments/assets/9ff4e2d5-bb7e-4500-9d32-771e9304ae6f)
 
- ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=choijungmua&show_icons=true&theme=calm_pink)
+
   
  
 </div>
