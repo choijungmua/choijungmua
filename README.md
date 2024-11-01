@@ -7,14 +7,7 @@
 👋Hi There! I'm a **FrontEnd Developer** using VS Code!✈️ Sometimes I develop SPA⚡ Web applications using **Next.js and React**👊.  
 I love💙 creating interactive🌼 and 👺**dynamic user experiences** with modern web technologies.🔎
 </div>
-<div align="center">
-  
-  ![216649417-9acc58df-9186-4132-ad43-819a57babb67](https://github.com/user-attachments/assets/9ff4e2d5-bb7e-4500-9d32-771e9304ae6f)
 
-
-  
- 
-</div>
 
 
 
@@ -57,6 +50,6 @@ I love💙 creating interactive🌼 and 👺**dynamic user experiences** with mo
   
 
  
-![241763891-7bb1e704-6026-48f9-8435-2f4d40101348](https://github.com/user-attachments/assets/9e10f5d2-2ff4-4f98-a988-d50eb6c0b4a8)
+
 </div>
 
