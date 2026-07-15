@@ -32,6 +32,18 @@ My recent work spans product interfaces, map-based communities, automated Git wo
 - Responsive, interaction-focused product experiences
 - Practical automation around delivery and repository workflows
 
+## How I build
+
+```mermaid
+flowchart LR
+    Intent[Product intent] --> Contract[Interface contract]
+    Contract --> State[Typed state]
+    State --> Data[Data boundary]
+    Data --> Verify[Automated verification]
+    Verify --> Ship[Incremental delivery]
+    Ship -. Feedback .-> Intent
+```
+
 ## Working stack
 
 | Area | Tools |
