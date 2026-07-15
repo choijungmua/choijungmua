@@ -1,6 +1,6 @@
 <svg width="900" height="400" viewBox="0 0 900 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="hero-product-proof-title hero-product-proof-desc">
   <title id="hero-product-proof-title">Selected work: ClickPick, ALLIM, and Contribution Art</title>
-  <desc id="hero-product-proof-desc">An editorial product-proof banner showing ClickPick as a map-based community, ALLIM as a TypeScript frontend under active development, and Contribution Art as Git-history-driven contribution-graph art.</desc>
+  <desc id="hero-product-proof-desc">An editorial product-proof banner showing ClickPick as a map-based community, ALLIM as a TypeScript frontend application, and Contribution Art as Git-history-driven contribution-graph art.</desc>
 
   <style>
     :root {
@@ -90,7 +90,7 @@
     <g aria-label="ALLIM, TypeScript frontend">
       <text x="584" y="136" class="mono label">TYPESCRIPT FRONTEND</text>
       <text x="584" y="184" class="sans display" font-size="40">ALLIM</text>
-      <text x="584" y="216" class="sans body">Application under active development</text>
+      <text x="584" y="216" class="sans body">Typed frontend application</text>
     </g>
 
     <line x1="584" y1="232" x2="868" y2="232" class="rule" />

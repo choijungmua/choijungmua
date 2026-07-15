@@ -17,11 +17,12 @@
 | Muted surface | `--color-surface-muted` | `#EAEEF2` | `#181D24` | Quiet bands, chips, code-like labels |
 | Text | `--color-text` | `#111318` | `#F6F8FA` | Headings and body copy |
 | Muted text | `--color-text-muted` | `#59636E` | `#A7B0BB` | Supporting copy and metadata |
-| Border | `--color-border` | `#D0D7DE` | `#30363D` | All rules and outlines |
+| Decorative separator | `--color-separator` | `#D0D7DE` | `#30363D` | Non-semantic dividers and container separation only |
+| Strong boundary | `--color-boundary-strong` | `#57606A` | `#6E7681` | Essential graphical boundaries; at least 3:1 against every adjacent neutral surface |
 | Functional blue | `--color-accent` | `#0969DA` | `#58A6FF` | Links, focus, selected state, verification |
 | Functional blue hover | `--color-accent-hover` | `#0550AE` | `#79C0FF` | Hover/active feedback only |
 
-Near-black, white, and neutral grays own all surfaces and illustration mass. Blue is the only chromatic accent and is reserved for a real function: link, focus, selection, status, or verification. Do not use blue for glows, background atmosphere, decorative rules, or filler art. No unlisted color, opacity-derived pseudo-token, or gradient is allowed.
+Near-black, white, and neutral grays own all surfaces and illustration mass. `--color-separator` is intentionally quiet: it is decorative, never conveys state, and is never the sole carrier of grouping. `--color-boundary-strong` is the neutral boundary for essential graphical objects and states. Blue is the only chromatic accent and is reserved for a real function: link, focus, selection, status, or verification. Do not use blue for glows, background atmosphere, decorative rules, or filler art. No unlisted color, opacity-derived pseudo-token, or gradient is allowed.
 
 ## Typography
 
@@ -65,7 +66,7 @@ The base unit is 8px. Layout dimensions, padding, gaps, and offsets use this gri
 
 ### `HeroFrame`
 
-The responsive container for identity and hero art. It uses canvas/surface tokens, a 1px border, at most a 16px radius, and `--space-3` to `--space-5` padding. Wide mode may split copy and art; compact mode stacks them. It has no interactive state and no shadow.
+The responsive container for identity and hero art. It uses canvas/surface tokens, a decorative 1px `--color-separator`, at most a 16px radius, and `--space-3` to `--space-5` padding. Proximity and surface tone establish grouping; the separator is never the only cue. Wide mode may split copy and art; compact mode stacks them. It has no interactive state and no shadow.
 
 ### `IdentityLockup`
 
@@ -73,15 +74,15 @@ An eyebrow, name, role, and one concise positioning line arranged as a vertical 
 
 ### `ProofChip`
 
-A short technology or capability label using mono text on the muted surface, a 1px border, and an 8px radius. Chips wrap; they never marquee, truncate a meaningful label, or imply certification. Default is neutral, while selected/verified may use functional blue with sufficient contrast.
+A short technology or capability label using mono text on the muted surface, a decorative 1px `--color-separator`, and an 8px radius. Chips wrap; they never marquee, truncate a meaningful label, or imply certification. A selected or verified chip must either use `--color-boundary-strong` as a visibly distinct 2px essential boundary or pair existing high-contrast `--color-text` with functional blue and an explicit text/icon cue so the state is redundant. The decorative separator never conveys selection or verification.
 
 ### `ActionLink`
 
-A real Markdown link with a descriptive label. Default and visited states use functional blue; hover/active use the blue-hover token; keyboard focus has a visible 2px blue outline with 2px offset. Do not draw an ActionLink inside SVG art or style inert content like one.
+A real Markdown link with a descriptive label. Default and visited states use functional blue; hover/active use the blue-hover token. Keyboard focus uses a visible 2px `--color-boundary-strong` outline with 2px offset while the functional-blue link text supplies a redundant cue. Do not draw an ActionLink inside SVG art or style inert content like one.
 
 ### `SectionRule`
 
-A 1px neutral divider paired with a heading or section boundary. It spans its grid track, uses no gradient, and has 24px minimum clearance from adjacent body copy. It never substitutes for heading hierarchy.
+A decorative 1px `--color-separator` paired with a heading or section break. It spans its grid track, uses no gradient, and has 24px minimum clearance from adjacent body copy. It is non-semantic: the heading and spacing establish grouping, and the rule never substitutes for hierarchy or conveys state.
 
 ## Responsive behavior
 
@@ -93,7 +94,8 @@ A 1px neutral divider paired with a heading or section boundary. It spans its gr
 
 ## Depth and motion
 
-- Depth is borders plus neutral tonal shifts: every outline is exactly 1px using `--color-border`. Do not use glass, blur, bevels, or drop shadows.
+- Depth is neutral tonal shifts plus two explicit boundary roles. Decorative dividers and container separators are exactly 1px using `--color-separator`; they are non-semantic, never convey state, and never carry grouping alone.
+- An essential graphical boundary must use `--color-boundary-strong` at 1px or greater. A state or selection must either add or thicken that strong boundary to a visibly distinct 2px outline, or use existing high-contrast `--color-text` plus functional blue and an explicit redundant cue. Merely recoloring an otherwise identical separator is insufficient. Do not use `--color-separator` for an essential boundary. Do not use glass, blur, bevels, or drop shadows.
 - Radius tokens are 8px, 12px, and 16px. The ceiling is 16px; nested elements use an equal or smaller radius than their container.
 - Motion is allowed only within SVG hero art when it communicates a state or sequence. Animate only `transform` and `opacity`; never animate layout, stroke geometry, color cycling, blur, or decorative particles.
 - Use 160ms `ease-out` for direct feedback and at most 240ms `ease-in-out` for a meaningful state transition. Do not autoplay a continuous loop.
@@ -101,7 +103,8 @@ A 1px neutral divider paired with a heading or section boundary. It spans its gr
 
 ## Accessibility and content
 
-- Target WCAG 2.2 AA: 4.5:1 minimum contrast for normal text, 3:1 for large text and graphical boundaries, visible focus, logical headings, and descriptive link labels. Color is never the sole state cue.
+- Target WCAG 2.2 AA: 4.5:1 minimum contrast for normal text, 3:1 for large text and essential graphical boundaries, visible focus, logical headings, and descriptive link labels. Every essential state or selection must use `--color-boundary-strong` as a visibly added/thickened outline or the existing high-contrast text plus functional-blue redundant-cue pattern. Changing only a same-width separator color is not sufficient; color is never the sole state cue.
+- Decorative `--color-separator` rules are exempt from graphical-object contrast only because they are non-semantic: removing one must not erase a state, boundary needed to identify a control, or the only cue that content belongs together.
 - Keep meaningful text in Markdown/HTML. Every image has concise alt text describing its purpose; decorative SVGs use empty alt text. Do not repeat adjacent visible copy in alt text.
 - Avoid flashing, continuous motion, parallax, hover-only disclosure, emoji-as-icon, and controls that exist only visually. Interactive targets supplied by the host page should be at least 44px in either dimension where author styling controls them.
 - Content truth rules: publish only claims supported by the current README, linked repository, or an owner-provided source; never invent employers, clients, metrics, awards, credentials, dates, availability, or project outcomes.

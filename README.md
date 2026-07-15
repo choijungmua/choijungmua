@@ -10,14 +10,14 @@ I focus on responsive product UI, maintainable structure, and practical delivery
 
 ## Selected work
 
-- **ClickPick** — A map-based community for discovering and sharing places, with posts, profiles, and admin tools. [Source](https://github.com/ClickPickProject/FrontEnd) · [Live](https://clickpick.vercel.app)
-- **ALLIM** — A TypeScript frontend application under active development. [Source](https://github.com/choijungmua/allim-front)
-- **Contribution Art** — Automated contribution-graph art driven by Git history. [Source](https://github.com/choijungmua/contribution-art)
+- **ClickPick** — A map-based community for discovering and sharing places, with posts, profiles, and admin tools. [ClickPick source](https://github.com/ClickPickProject/FrontEnd) · [ClickPick live site](https://clickpick.vercel.app)
+- **ALLIM** — A TypeScript frontend application. [ALLIM source](https://github.com/choijungmua/allim-front)
+- **Contribution Art** — Automated contribution-graph art driven by Git history. [Contribution Art source](https://github.com/choijungmua/contribution-art)
 
 <details open>
 <summary>Hero Lab — choose a direction</summary>
 
-Motion and 3D are pre-rendered visual studies; this GitHub-native disclosure is the interaction.
+Three profile studies use finite self-hosted SVG motion, while Spatial 3D is a pre-rendered vector study; this GitHub-native disclosure is the interaction.
 
 **Editorial.** Large type, disciplined rules, and generous space set out a clear interface thesis.
 
