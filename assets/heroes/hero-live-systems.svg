@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400" viewBox="0 0 900 400" role="img" aria-labelledby="systems-title systems-desc" focusable="false">
+  <title id="systems-title">Build, verify, and ship system study</title>
+  <desc id="systems-desc">An illustrative instrument study maps Build to Verify to Ship through a finite signal path; it does not present external telemetry.</desc>
+  <style>
+    :root {
+      --color-canvas: #FFFFFF;
+      --color-surface: #F6F8FA;
+      --color-surface-muted: #EAEEF2;
+      --color-text: #111318;
+      --color-text-muted: #59636E;
+      --color-border: #D0D7DE;
+      --color-accent: #0969DA;
+    }
+
+    .canvas { fill: var(--color-canvas); }
+    .surface { fill: var(--color-surface); }
+    .surface-muted { fill: var(--color-surface-muted); }
+    .rule { fill: none; stroke: var(--color-border); stroke-width: 1; }
+    .rule-fill { fill: var(--color-border); }
+    .ink { fill: var(--color-text); }
+    .muted { fill: var(--color-text-muted); }
+    .accent { fill: var(--color-accent); }
+    .accent-line { fill: none; stroke: var(--color-accent); stroke-width: 2; }
+    .signal-line { fill: none; stroke: var(--color-accent); stroke-width: 3; stroke-linecap: square; stroke-linejoin: miter; }
+    .sans { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .06em; }
+    .heading { font-size: 24px; font-weight: 650; letter-spacing: -.015em; }
+    .label { font-size: 14px; font-weight: 500; }
+    .micro { font-size: 12px; font-weight: 600; letter-spacing: .06em; }
+    .signal-a,
+    .signal-b,
+    .confirmation {
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+    .signal-a { opacity: 1; animation: signal-a 240ms ease-in-out 160ms 1 forwards; }
+    .signal-b { opacity: 0; animation: signal-b 240ms ease-in-out 400ms 1 forwards; }
+    .confirmation { opacity: 0; animation: confirm 160ms ease-out 640ms 1 forwards; }
+
+    @keyframes signal-a {
+      from { opacity: 1; transform: translateX(0); }
+      to { opacity: 0; transform: translateX(260px); }
+    }
+
+    @keyframes signal-b {
+      from { opacity: 1; transform: translateX(0); }
+      to { opacity: 0; transform: translateX(278px); }
+    }
+
+    @keyframes confirm {
+      from { opacity: 0; transform: translateX(-8px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-canvas: #0B0D10;
+        --color-surface: #11151A;
+        --color-surface-muted: #181D24;
+        --color-text: #F6F8FA;
+        --color-text-muted: #A7B0BB;
+        --color-border: #30363D;
+        --color-accent: #58A6FF;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .signal-a,
+      .signal-b,
+      .confirmation { animation: none; }
+      .signal-a,
+      .signal-b { opacity: 0; }
+      .confirmation { opacity: 1; transform: none; }
+    }
+  </style>
+
+  <rect class="canvas" width="900" height="400" rx="12"/>
+  <rect class="rule" x=".5" y=".5" width="899" height="399" rx="11.5"/>
+
+  <g aria-hidden="true">
+    <path class="rule" d="M24 48.5H876M24 351.5H876"/>
+    <path class="rule" d="M24 24.5H40M860 24.5H876M24 375.5H40M860 375.5H876"/>
+    <path class="rule" d="M24 48.5V64M876 48.5V64M24 336V351.5M876 336V351.5"/>
+
+    <text class="mono eyebrow ink" x="24" y="31">SYSTEM STUDY</text>
+    <text class="mono micro muted" x="876" y="31" text-anchor="end">ILLUSTRATIVE SIGNAL · 01</text>
+
+    <rect class="surface" x="24" y="72" width="852" height="256" rx="8"/>
+    <rect class="rule" x="24.5" y="72.5" width="851" height="255" rx="7.5"/>
+
+    <path class="rule" d="M48 96.5H852M48 128.5H852M48 160.5H852M48 192.5H852M48 224.5H852M48 256.5H852M48 288.5H852M48 304.5H852"/>
+    <path class="rule" d="M48.5 96V304M80.5 96V304M112.5 96V304M144.5 96V304M176.5 96V304M208.5 96V304M240.5 96V304M272.5 96V304M304.5 96V304M336.5 96V304M368.5 96V304M400.5 96V304M432.5 96V304M464.5 96V304M496.5 96V304M528.5 96V304M560.5 96V304M592.5 96V304M624.5 96V304M656.5 96V304M688.5 96V304M720.5 96V304M752.5 96V304M784.5 96V304M816.5 96V304M848.5 96V304"/>
+
+    <rect class="surface" x="48" y="96" width="136" height="208"/>
+    <path class="rule" d="M184.5 96V304M48 256.5H184"/>
+    <text class="mono micro muted" x="64" y="119">PATH / 03</text>
+    <text class="sans heading ink" x="64" y="153">Build</text>
+    <text class="sans label muted" x="64" y="177">Intent into form</text>
+    <path class="rule" d="M64 208.5H160M64 224.5H136M64 240.5H152"/>
+    <rect class="surface-muted" x="64" y="272" width="96" height="16" rx="8"/>
+    <text class="mono micro ink" x="112" y="284" text-anchor="middle">BUILD</text>
+
+    <rect class="surface" x="716" y="96" width="136" height="208"/>
+    <path class="rule" d="M715.5 96V304M716 256.5H852"/>
+    <text class="mono micro muted" x="836" y="119" text-anchor="end">OUTPUT / 01</text>
+    <text class="sans heading ink" x="836" y="153" text-anchor="end">Ship</text>
+    <text class="sans label muted" x="836" y="177" text-anchor="end">Change in motion</text>
+    <path class="rule" d="M740 208.5H836M764 224.5H836M748 240.5H836"/>
+    <rect class="surface-muted" x="740" y="272" width="96" height="16" rx="8"/>
+    <text class="mono micro ink" x="788" y="284" text-anchor="middle">SHIP</text>
+
+    <rect class="surface" x="392" y="112" width="116" height="176" rx="8"/>
+    <rect class="rule" x="392.5" y="112.5" width="115" height="175" rx="7.5"/>
+    <text class="mono micro muted" x="450" y="137" text-anchor="middle">GATE</text>
+    <text class="sans heading ink" x="450" y="169" text-anchor="middle">Verify</text>
+    <path class="rule" d="M416 184.5H484M416 224.5H484"/>
+    <circle class="surface-muted" cx="450" cy="204" r="20"/>
+    <circle class="rule" cx="450" cy="204" r="19.5"/>
+    <path class="accent-line" d="M441 204L447 210L459 196"/>
+    <rect class="surface-muted" x="416" y="248" width="68" height="16" rx="8"/>
+    <text class="mono micro ink" x="450" y="260" text-anchor="middle">VERIFY</text>
+
+    <path class="signal-line" d="M160 204H216L228 176L240 232L252 188L264 204H416M484 204H544L556 188L568 220L580 196L592 204H740"/>
+    <path class="rule" d="M184 191.5V216.5M716 191.5V216.5"/>
+    <circle class="accent" cx="160" cy="204" r="5"/>
+    <circle class="accent" cx="450" cy="204" r="5"/>
+
+    <g transform="translate(160 204)">
+      <g class="signal-a">
+        <path class="accent-line" d="M-20 0H0"/>
+        <rect class="accent" x="-4" y="-4" width="8" height="8" rx="4"/>
+      </g>
+    </g>
+    <g transform="translate(438 204)">
+      <g class="signal-b">
+        <path class="accent-line" d="M-20 0H0"/>
+        <rect class="accent" x="-4" y="-4" width="8" height="8" rx="4"/>
+      </g>
+    </g>
+
+    <g class="confirmation" transform="translate(0 0)">
+      <circle class="accent" cx="740" cy="204" r="7"/>
+      <path class="accent-line" d="M752 204H776M768 196L776 204L768 212"/>
+    </g>
+
+    <path class="rule" d="M208 320.5H692"/>
+    <rect class="rule-fill" x="207" y="317" width="7" height="7" rx="3.5"/>
+    <rect class="rule-fill" x="447" y="317" width="7" height="7" rx="3.5"/>
+    <rect class="accent" x="687" y="316" width="9" height="9" rx="4.5"/>
+    <text class="mono micro muted" x="208" y="344">BUILD</text>
+    <text class="mono micro muted" x="450" y="344" text-anchor="middle">VERIFY</text>
+    <text class="mono micro ink" x="692" y="344" text-anchor="end">SHIP</text>
+
+    <text class="sans label muted" x="24" y="379">A finite process study—structure, check, release.</text>
+    <text class="mono micro muted" x="876" y="379" text-anchor="end">NO EXTERNAL TELEMETRY</text>
+  </g>
+</svg>

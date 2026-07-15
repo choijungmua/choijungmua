@@ -1,0 +1,129 @@
+<svg width="750" height="800" viewBox="0 0 750 800" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="hero-command-mobile-title hero-command-mobile-desc" preserveAspectRatio="xMidYMid meet">
+  <title id="hero-command-mobile-title">CJM, product-minded frontend engineer</title>
+  <desc id="hero-command-mobile-desc">A tall, mobile-art-directed command surface advances once through Build, Verify, and Ship, then settles on a verified final state.</desc>
+  <style>
+    :root {
+      --color-canvas: #0B0D10;
+      --color-surface: #11151A;
+      --color-surface-muted: #181D24;
+      --color-text: #F6F8FA;
+      --color-text-muted: #A7B0BB;
+      --color-border: #30363D;
+      --color-accent: #58A6FF;
+      --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    }
+    .canvas { fill: var(--color-canvas); }
+    .surface { fill: var(--color-surface); }
+    .surface-muted { fill: var(--color-surface-muted); }
+    .border { stroke: var(--color-border); stroke-width: 1; }
+    .accent-border { stroke: var(--color-accent); stroke-width: 1; }
+    .text { fill: var(--color-text); font-family: var(--font-sans); }
+    .muted { fill: var(--color-text-muted); font-family: var(--font-sans); }
+    .mono { font-family: var(--font-mono); font-weight: 600; letter-spacing: .06em; }
+    .accent { fill: var(--color-accent); }
+    .display { font-size: 88px; font-weight: 700; letter-spacing: -.03em; }
+    .role { font-size: 32px; font-weight: 650; letter-spacing: -.015em; }
+    .eyebrow { font-size: 28px; }
+    .surface-title { font-size: 38px; font-weight: 650; letter-spacing: -.015em; }
+    .row-text { font-size: 32px; font-weight: 500; }
+    .row-meta { font-size: 32px; }
+    .active-build, .active-verify { opacity: 0; }
+    .done-build, .done-verify, .active-ship { opacity: 1; }
+    .active-build { animation: build-active 2.4s linear 1 both; }
+    .done-build { animation: build-done 2.4s linear 1 both; }
+    .active-verify { animation: verify-active 2.4s linear 1 both; }
+    .done-verify { animation: verify-done 2.4s linear 1 both; }
+    .active-ship { animation: ship-active 2.4s linear 1 both; }
+    .sequence-marker { transform-box: fill-box; transform-origin: center; transform: translateY(192px); animation: marker-flow 2.4s linear 1 both; }
+    @keyframes build-active { 0%, 18% { opacity: 1; transform: translateY(0); } 27%, 100% { opacity: 0; transform: translateY(2px); } }
+    @keyframes build-done { 0%, 25% { opacity: 0; transform: translateY(2px); } 34%, 100% { opacity: 1; transform: translateY(0); } }
+    @keyframes verify-active { 0%, 27% { opacity: 0; transform: translateY(4px); } 36%, 56% { opacity: 1; transform: translateY(0); } 65%, 100% { opacity: 0; transform: translateY(2px); } }
+    @keyframes verify-done { 0%, 63% { opacity: 0; transform: translateY(2px); } 72%, 100% { opacity: 1; transform: translateY(0); } }
+    @keyframes ship-active { 0%, 65% { opacity: 0; transform: translateY(4px); } 74%, 100% { opacity: 1; transform: translateY(0); } }
+    @keyframes marker-flow { 0%, 18% { transform: translateY(0); } 27%, 56% { transform: translateY(96px); } 65%, 100% { transform: translateY(192px); } }
+    @media (prefers-reduced-motion: reduce) {
+      .active-build, .done-build, .active-verify, .done-verify, .active-ship, .sequence-marker { animation: none; }
+      .active-build, .active-verify { opacity: 0; transform: none; }
+      .done-build, .done-verify, .active-ship { opacity: 1; transform: none; }
+      .sequence-marker { transform: translateY(192px); }
+    }
+  </style>
+  <defs>
+    <clipPath id="hero-command-mobile-frame"><rect width="750" height="800" rx="16" /></clipPath>
+  </defs>
+
+  <g clip-path="url(#hero-command-mobile-frame)">
+    <rect class="canvas" width="750" height="800" />
+    <path class="border" d="M32 32H718M32 304H718M32 768H718" />
+    <path class="border" d="M32 32V80M718 32V80" />
+
+    <g aria-label="Identity">
+      <text class="muted mono eyebrow" x="40" y="76">CJM / PROFILE</text>
+      <text class="text display" x="36" y="160">CJM</text>
+      <rect class="accent" x="40" y="184" width="64" height="8" rx="4" />
+      <text class="text role" x="40" y="232">PRODUCT-MINDED</text>
+      <text class="text role" x="40" y="272">FRONTEND ENGINEER</text>
+    </g>
+
+    <g aria-label="Finite workflow sequence">
+      <rect class="surface border" x="32.5" y="320.5" width="685" height="447" rx="16" />
+      <text class="muted mono eyebrow" x="64" y="368">WORKFLOW / FINITE STATE</text>
+      <text class="text surface-title" x="64" y="424">Build → Verify → Ship</text>
+      <path class="border" d="M64 456H686" />
+
+      <g aria-label="Build state">
+        <rect class="surface border" x="64.5" y="480.5" width="621" height="79" rx="8" />
+        <text class="muted mono row-meta" x="88" y="529">01</text>
+        <text class="text mono row-text" x="160" y="530">BUILD</text>
+        <text class="muted mono row-meta" x="512" y="529">PENDING</text>
+        <g class="active-build">
+          <rect class="surface-muted accent-border" x="64.5" y="480.5" width="621" height="79" rx="8" />
+          <text class="accent mono row-meta" x="88" y="529">01</text>
+          <text class="text mono row-text" x="160" y="530">BUILD</text>
+          <text class="accent mono row-meta" x="544" y="529">ACTIVE</text>
+        </g>
+        <g class="done-build">
+          <rect class="surface" x="496" y="488" width="176" height="64" />
+          <path class="accent-border" d="M520 515L530 525L546 507" />
+          <text class="accent mono row-meta" x="568" y="529">DONE</text>
+        </g>
+      </g>
+
+      <g aria-label="Verify state">
+        <rect class="surface border" x="64.5" y="576.5" width="621" height="79" rx="8" />
+        <text class="muted mono row-meta" x="88" y="625">02</text>
+        <text class="text mono row-text" x="160" y="626">VERIFY</text>
+        <text class="muted mono row-meta" x="512" y="625">PENDING</text>
+        <g class="active-verify">
+          <rect class="surface-muted accent-border" x="64.5" y="576.5" width="621" height="79" rx="8" />
+          <text class="accent mono row-meta" x="88" y="625">02</text>
+          <text class="text mono row-text" x="160" y="626">VERIFY</text>
+          <text class="accent mono row-meta" x="544" y="625">ACTIVE</text>
+        </g>
+        <g class="done-verify">
+          <rect class="surface" x="496" y="584" width="176" height="64" />
+          <path class="accent-border" d="M520 611L530 621L546 603" />
+          <text class="accent mono row-meta" x="568" y="625">DONE</text>
+        </g>
+      </g>
+
+      <g aria-label="Ship state">
+        <rect class="surface border" x="64.5" y="672.5" width="621" height="79" rx="8" />
+        <text class="muted mono row-meta" x="88" y="721">03</text>
+        <text class="text mono row-text" x="160" y="722">SHIP</text>
+        <text class="muted mono row-meta" x="512" y="721">PENDING</text>
+        <g class="active-ship">
+          <rect class="surface-muted accent-border" x="64.5" y="672.5" width="621" height="79" rx="8" />
+          <text class="accent mono row-meta" x="88" y="721">03</text>
+          <text class="text mono row-text" x="160" y="722">SHIP</text>
+          <path class="accent-border" d="M496 707L506 717L522 699" />
+          <text class="accent mono row-meta" x="520" y="721">VERIFIED</text>
+        </g>
+      </g>
+
+      <rect class="accent sequence-marker" x="48" y="496" width="4" height="48" rx="2" />
+    </g>
+  </g>
+  <rect class="border" x="0.5" y="0.5" width="749" height="799" rx="15.5" />
+</svg>

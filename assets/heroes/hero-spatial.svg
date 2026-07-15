@@ -1,0 +1,91 @@
+<svg width="900" height="420" viewBox="0 0 900 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="spatial-title spatial-description">
+  <title id="spatial-title">CJM spatial systems — isometric study</title>
+  <desc id="spatial-description">A pre-rendered isometric study with three raised system planes for interface, state, and delivery, linked across a precise neutral grid.</desc>
+
+  <style>
+    .sans { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+  </style>
+
+  <rect width="900" height="420" rx="16" fill="#0B0D10" />
+
+  <g aria-label="CJM spatial systems introduction">
+    <text class="mono" x="48" y="62" fill="#A7B0BB" font-size="15" font-weight="600" letter-spacing="2.1">ISOMETRIC STUDY</text>
+    <text class="sans" x="46" y="137" fill="#F6F8FA" font-size="58" font-weight="700" letter-spacing="-1.8">CJM</text>
+    <text class="sans" x="48" y="181" fill="#F6F8FA" font-size="26" font-weight="650" letter-spacing="-0.4">Spatial systems</text>
+    <text class="sans" x="48" y="238" fill="#A7B0BB" font-size="19" font-weight="400">Interface, state, and delivery</text>
+    <text class="sans" x="48" y="266" fill="#A7B0BB" font-size="19" font-weight="400">arranged as one readable field.</text>
+    <path d="M48 310H240" stroke="#30363D" />
+    <text class="mono" x="48" y="342" fill="#A7B0BB" font-size="14" font-weight="600" letter-spacing="1.4">PRE-RENDERED VECTOR</text>
+  </g>
+
+  <path d="M288 40V380" stroke="#30363D" />
+
+  <g aria-label="Layered isometric system field">
+    <path d="M324 185L590 318V340L324 207V185Z" fill="#181D24" stroke="#30363D" />
+    <path d="M856 185L590 318V340L856 207V185Z" fill="#0B0D10" stroke="#30363D" />
+    <path d="M590 52L856 185L590 318L324 185L590 52Z" fill="#11151A" stroke="#30363D" />
+
+    <g stroke="#30363D">
+      <path d="M634 74L368 207" />
+      <path d="M679 96L413 229" />
+      <path d="M723 119L457 252" />
+      <path d="M767 141L501 274" />
+      <path d="M812 163L546 296" />
+      <path d="M546 74L812 207" />
+      <path d="M501 96L767 229" />
+      <path d="M457 119L723 252" />
+      <path d="M413 141L679 274" />
+      <path d="M368 163L634 296" />
+    </g>
+
+    <path d="M409 222L590 312L770 222" stroke="#58A6FF" stroke-width="2" />
+    <circle cx="409" cy="222" r="5" fill="#58A6FF" />
+    <circle cx="590" cy="312" r="5" fill="#58A6FF" />
+    <circle cx="770" cy="222" r="5" fill="#58A6FF" />
+
+    <g aria-label="Interface plane">
+      <path d="M378 143L462 185L462 201L378 159V143Z" fill="#0B0D10" stroke="#30363D" />
+      <path d="M546 143L462 185V201L546 159V143Z" fill="#11151A" stroke="#30363D" />
+      <path d="M462 101L546 143L462 185L378 143L462 101Z" fill="#181D24" stroke="#30363D" />
+      <path d="M414 143L462 119L510 143L462 167L414 143Z" fill="#11151A" stroke="#30363D" />
+      <path d="M430 143L462 127L494 143" stroke="#A7B0BB" />
+      <circle cx="462" cy="143" r="6" fill="#58A6FF" />
+      <text class="mono" x="370" y="92" fill="#A7B0BB" font-size="13" font-weight="600" letter-spacing="1.2">01 / INTERFACE</text>
+      <path d="M429 97L443 111" stroke="#30363D" />
+    </g>
+
+    <g aria-label="State plane">
+      <path d="M515 163L590 200V216L515 179V163Z" fill="#0B0D10" stroke="#30363D" />
+      <path d="M665 163L590 200V216L665 179V163Z" fill="#11151A" stroke="#30363D" />
+      <path d="M590 125L665 163L590 200L515 163L590 125Z" fill="#181D24" stroke="#30363D" />
+      <path d="M537 118L590 145V157L537 130V118Z" fill="#0B0D10" stroke="#30363D" />
+      <path d="M643 118L590 145V157L643 130V118Z" fill="#11151A" stroke="#30363D" />
+      <path d="M590 92L643 118L590 145L537 118L590 92Z" fill="#181D24" stroke="#30363D" />
+      <path d="M558 118L590 102L622 118L590 134L558 118Z" fill="#11151A" stroke="#30363D" />
+      <circle cx="590" cy="118" r="6" fill="#58A6FF" />
+      <text class="mono" x="568" y="74" fill="#A7B0BB" font-size="13" font-weight="600" letter-spacing="1.2">02 / STATE</text>
+      <path d="M614 79L604 94" stroke="#30363D" />
+    </g>
+
+    <g aria-label="Delivery plane">
+      <path d="M630 211L716 254V270L630 227V211Z" fill="#0B0D10" stroke="#30363D" />
+      <path d="M802 211L716 254V270L802 227V211Z" fill="#11151A" stroke="#30363D" />
+      <path d="M716 168L802 211L716 254L630 211L716 168Z" fill="#181D24" stroke="#30363D" />
+      <path d="M668 211L716 187L764 211L716 235L668 211Z" fill="#11151A" stroke="#30363D" />
+      <path d="M684 211L716 195L748 211" stroke="#A7B0BB" />
+      <circle cx="716" cy="211" r="6" fill="#58A6FF" />
+      <text class="mono" x="746" y="298" fill="#A7B0BB" font-size="13" font-weight="600" letter-spacing="1.2">03 / DELIVERY</text>
+      <path d="M741 279L733 250" stroke="#30363D" />
+    </g>
+
+    <g aria-label="System route">
+      <path d="M462 149L462 157L590 221L716 158L716 205" stroke="#58A6FF" stroke-width="2" />
+      <circle cx="590" cy="221" r="5" fill="#58A6FF" />
+      <path d="M586 221L590 225L598 217" stroke="#0B0D10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <text class="mono" x="532" y="248" fill="#A7B0BB" font-size="12" font-weight="600" letter-spacing="1.1">SYSTEM ROUTE</text>
+    </g>
+  </g>
+
+  <rect x="0.5" y="0.5" width="899" height="419" rx="15.5" stroke="#30363D" />
+</svg>

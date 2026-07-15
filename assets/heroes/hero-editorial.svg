@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 896 360" width="100%" role="img" aria-labelledby="editorial-title editorial-desc" preserveAspectRatio="xMidYMid meet">
+  <title id="editorial-title">Choi Jung Mua — editorial interface thesis</title>
+  <desc id="editorial-desc">A restrained near-black editorial composition with oversized CJM initials and the thesis: Interfaces with clear state, deliberate motion, and product intent.</desc>
+  <style>
+    :root {
+      --color-canvas: #0B0D10;
+      --color-surface: #11151A;
+      --color-text: #F6F8FA;
+      --color-text-muted: #A7B0BB;
+      --color-border: #30363D;
+      --color-accent: #58A6FF;
+    }
+
+    .canvas { fill: var(--color-canvas); }
+    .surface { fill: var(--color-surface); }
+    .rule { stroke: var(--color-border); stroke-width: 1; shape-rendering: crispEdges; }
+    .text { fill: var(--color-text); font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .muted { fill: var(--color-text-muted); font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .mono { fill: var(--color-text-muted); font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; }
+    .accent { fill: var(--color-accent); }
+    .display { font-size: 144px; font-weight: 700; letter-spacing: -0.03em; }
+    .thesis { font-size: 32px; font-weight: 650; letter-spacing: -0.015em; }
+    .compact { display: none; }
+
+    @media (max-width: 560px) {
+      .wide { display: none; }
+      .compact { display: block; }
+      .display { font-size: 136px; }
+      .thesis { font-size: 42px; }
+      .mono { font-size: 24px; }
+    }
+  </style>
+
+  <rect class="canvas" width="896" height="360"/>
+  <rect class="rule" x="0.5" y="0.5" width="895" height="359" fill="none"/>
+
+  <g class="wide">
+    <text class="mono" x="32" y="32">CJM / INTERFACE STUDY</text>
+    <text class="mono" x="864" y="32" text-anchor="end">EDITION 01</text>
+    <line class="rule" x1="32" y1="48" x2="864" y2="48"/>
+    <line class="rule" x1="352" y1="48" x2="352" y2="328"/>
+
+    <text class="muted" x="32" y="88" font-size="16" font-weight="500">CHOI JUNG MUA</text>
+    <text class="text display" x="24" y="248">CJM</text>
+    <rect class="surface" x="32" y="280" width="288" height="24"/>
+    <rect class="accent" x="40" y="288" width="8" height="8"/>
+    <text class="mono" x="64" y="297">SELECTED PRINCIPLE / 01</text>
+
+    <text class="mono" x="400" y="88">THESIS / 001</text>
+    <text class="text thesis" x="400" y="136">
+      <tspan x="400" dy="0">Interfaces with</tspan>
+      <tspan x="400" dy="40">clear state, deliberate</tspan>
+      <tspan x="400" dy="40">motion, and product intent.</tspan>
+    </text>
+
+    <line class="rule" x1="400" y1="264" x2="864" y2="264"/>
+    <text class="mono accent" x="400" y="296">01</text>
+    <text class="mono" x="432" y="296">CLEAR STATE</text>
+    <text class="mono" x="592" y="296">02 / DELIBERATE MOTION</text>
+    <text class="mono" x="864" y="320" text-anchor="end">03 / PRODUCT INTENT</text>
+
+    <line class="rule" x1="32" y1="328" x2="864" y2="328"/>
+    <text class="mono" x="32" y="352">CHOI JUNG MUA</text>
+    <text class="mono" x="864" y="352" text-anchor="end">STATIC / RESPONSIVE SVG</text>
+  </g>
+
+  <g class="compact">
+    <text class="mono" x="32" y="24">CHOI JUNG MUA / CJM</text>
+    <rect class="accent" x="824" y="8" width="16" height="16"/>
+    <text class="mono accent" x="808" y="24" text-anchor="end">01</text>
+    <line class="rule" x1="32" y1="48" x2="864" y2="48"/>
+
+    <text class="text display" x="24" y="184">CJM</text>
+    <text class="mono" x="864" y="176" text-anchor="end">INTERFACE STUDY</text>
+    <line class="rule" x1="32" y1="200" x2="864" y2="200"/>
+
+    <text class="text thesis" x="32" y="264">
+      <tspan x="32" dy="0">Interfaces with clear state,</tspan>
+      <tspan x="32" dy="43">deliberate motion, and</tspan>
+      <tspan x="32" dy="43">product intent.</tspan>
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,83 @@
+<svg width="900" height="380" viewBox="0 0 900 380" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="terminal-title terminal-desc" focusable="false">
+  <title id="terminal-title">Terminal session study — build, verify, ship</title>
+  <desc id="terminal-desc">An illustrative session study, not shell output. The cjm/profile sequence reveals 01 build interface contract, 02 verify states and bounds, and 03 ship incremental delivery, then remains complete.</desc>
+
+  <style>
+    .reveal {
+      opacity: 1;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal { opacity: 0; animation: terminal-reveal 160ms ease-out both; }
+      .step-1-number { animation-delay: 240ms; }
+      .step-1-verb { animation-delay: 400ms; }
+      .step-1-copy { animation-delay: 560ms; }
+      .step-2-number { animation-delay: 800ms; }
+      .step-2-verb { animation-delay: 960ms; }
+      .step-2-copy { animation-delay: 1120ms; }
+      .step-3-number { animation-delay: 1360ms; }
+      .step-3-verb { animation-delay: 1520ms; }
+      .step-3-copy { animation-delay: 1680ms; }
+      .sequence-complete { animation-delay: 1920ms; }
+    }
+
+    @keyframes terminal-reveal {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; }
+    }
+  </style>
+
+  <defs>
+    <clipPath id="terminal-frame">
+      <rect width="900" height="380" rx="16" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#terminal-frame)">
+    <rect width="900" height="380" fill="#0B0D10" />
+    <rect x="24.5" y="24.5" width="851" height="331" rx="11.5" fill="#11151A" stroke="#30363D" />
+
+    <g font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace">
+      <text x="48" y="70" fill="#F6F8FA" font-size="40" font-weight="600">cjm/profile</text>
+      <text x="852" y="70" fill="#A7B0BB" font-size="38" font-weight="600" text-anchor="end">SESSION STUDY</text>
+      <path d="M48 88H852" stroke="#30363D" />
+
+      <g aria-label="01 build interface contract">
+        <rect x="48.5" y="108.5" width="55" height="47" rx="7.5" fill="#181D24" stroke="#30363D" />
+        <rect class="reveal step-1-number" x="48" y="108" width="8" height="48" rx="4" fill="#58A6FF" />
+        <text class="reveal step-1-number" x="60" y="145" fill="#F6F8FA" font-size="38" font-weight="600">01</text>
+        <text class="reveal step-1-verb" x="128" y="145" fill="#58A6FF" font-size="38" font-weight="600">BUILD</text>
+        <text class="reveal step-1-copy" x="288" y="145" fill="#A7B0BB" font-size="38" font-weight="500">interface contract</text>
+      </g>
+
+      <g aria-label="02 verify states and bounds">
+        <rect x="48.5" y="172.5" width="55" height="47" rx="7.5" fill="#181D24" stroke="#30363D" />
+        <rect class="reveal step-2-number" x="48" y="172" width="8" height="48" rx="4" fill="#58A6FF" />
+        <text class="reveal step-2-number" x="60" y="209" fill="#F6F8FA" font-size="38" font-weight="600">02</text>
+        <text class="reveal step-2-verb" x="128" y="209" fill="#58A6FF" font-size="38" font-weight="600">VERIFY</text>
+        <text class="reveal step-2-copy" x="312" y="209" fill="#A7B0BB" font-size="38" font-weight="500">states + bounds</text>
+      </g>
+
+      <g aria-label="03 ship incremental delivery">
+        <rect x="48.5" y="236.5" width="55" height="47" rx="7.5" fill="#181D24" stroke="#30363D" />
+        <rect class="reveal step-3-number" x="48" y="236" width="8" height="48" rx="4" fill="#58A6FF" />
+        <text class="reveal step-3-number" x="60" y="273" fill="#F6F8FA" font-size="38" font-weight="600">03</text>
+        <text class="reveal step-3-verb" x="128" y="273" fill="#58A6FF" font-size="38" font-weight="600">SHIP</text>
+        <text class="reveal step-3-copy" x="264" y="273" fill="#A7B0BB" font-size="38" font-weight="500">incremental delivery</text>
+        <g class="reveal sequence-complete" aria-label="Sequence complete">
+          <rect x="812.5" y="244.5" width="31" height="31" rx="7.5" fill="#181D24" stroke="#58A6FF" />
+          <path d="M820 260L826 266L837 253" stroke="#58A6FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        </g>
+      </g>
+
+      <path d="M48 300H852" stroke="#30363D" />
+      <text x="48" y="340" fill="#A7B0BB" font-size="38" font-weight="600">ILLUSTRATIVE / NOT SHELL OUTPUT</text>
+    </g>
+  </g>
+
+  <rect x="0.5" y="0.5" width="899" height="379" rx="15.5" stroke="#30363D" />
+</svg>
