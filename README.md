@@ -1,62 +1,54 @@
-<div align="center">
-
 <picture>
-  <source media="(max-width: 480px)" srcset="./assets/profile-hero-mobile.svg" />
-  <source media="(max-width: 960px)" srcset="./assets/profile-hero-compact.svg" />
-  <img src="./assets/profile-hero.svg" alt="CJM, frontend engineer, with a dimensional interface stack" width="100%" />
+  <source media="(max-width: 480px)" srcset="./assets/heroes/hero-command-mobile.svg" />
+  <source media="(max-width: 960px)" srcset="./assets/heroes/hero-command-compact.svg" />
+  <img src="./assets/heroes/hero-command-desktop.svg" alt="Choi Jung Mua, a product-minded frontend engineer, shown through a build, verify, and ship workflow" width="100%" />
 </picture>
 
-# CJM
+**Choi Jung Mua (CJM)** — frontend engineer building durable interfaces for real products.
 
-**Frontend engineer building durable interfaces for real products.**
-
-`TypeScript` · `React` · `Next.js` · `TanStack Query` · `Tailwind CSS`
-
-[Selected work](#selected-work) · [GitHub](https://github.com/choijungmua) · [Email](mailto:chlwjd022@gmail.com)
-
-</div>
-
-## About
-
-I build frontend applications with React and Next.js, with an emphasis on clear interaction, maintainable UI structure, and production-ready delivery.
-
-My recent work spans product interfaces, map-based communities, automated Git workflows, and small experiments that turn an idea into something people can use.
+I focus on responsive product UI, maintainable structure, and practical delivery automation.
 
 ## Selected work
 
-| Project | What it does | Stack | Links |
-| --- | --- | --- | --- |
-| **ClickPick** | A map-based community for discovering and sharing places, with posts, profiles, and admin tools. | Next.js 14, React, Tailwind CSS | [Source](https://github.com/ClickPickProject/FrontEnd) · [Live](https://clickpick.vercel.app) |
-| **ALLIM Front** | A TypeScript frontend application under active development. | TypeScript | [Source](https://github.com/choijungmua/allim-front) |
-| **Contribution Art** | Automated contribution-graph art driven by Git history. | Shell, GitHub Actions | [Source](https://github.com/choijungmua/contribution-art) |
+- **ClickPick** — A map-based community for discovering and sharing places, with posts, profiles, and admin tools. [Source](https://github.com/ClickPickProject/FrontEnd) · [Live](https://clickpick.vercel.app)
+- **ALLIM** — A TypeScript frontend application under active development. [Source](https://github.com/choijungmua/allim-front)
+- **Contribution Art** — Automated contribution-graph art driven by Git history. [Source](https://github.com/choijungmua/contribution-art)
 
-## Engineering focus
+<details open>
+<summary>Hero Lab — choose a direction</summary>
 
-- Reusable frontend architecture and consistent UI primitives
-- Responsive, interaction-focused product experiences
-- Practical automation around delivery and repository workflows
+Motion and 3D are pre-rendered visual studies; this GitHub-native disclosure is the interaction.
 
-## How I build
+**Editorial.** Large type, disciplined rules, and generous space set out a clear interface thesis.
 
-```mermaid
-flowchart LR
-    Intent[Product intent] --> Contract[Interface contract]
-    Contract --> State[Typed state]
-    State --> Data[Data boundary]
-    Data --> Verify[Automated verification]
-    Verify --> Ship[Incremental delivery]
-    Ship -. Feedback .-> Intent
-```
+<img src="./assets/heroes/hero-editorial.svg" alt="Editorial hero study with CJM initials and an interface design thesis" width="100%" />
 
-## Working stack
+**Terminal Session.** A finite session reveals the build, verify, and ship sequence, then settles.
 
-| Area | Tools |
-| --- | --- |
-| Product UI | TypeScript, JavaScript, React, Next.js |
-| Styling | HTML, CSS, Sass, Tailwind CSS |
-| State and data | TanStack Query, Recoil, Firebase |
-| Delivery | Git, GitHub Actions, Vercel |
+<img src="./assets/heroes/hero-terminal.svg" alt="Terminal session hero study showing a build, verify, and ship sequence" width="100%" />
+
+**Product Proof.** Named work takes the lead through three restrained project regions.
+
+<img src="./assets/heroes/hero-product-proof.svg" alt="Product proof hero study featuring ClickPick, ALLIM, and Contribution Art" width="100%" />
+
+**Systems Instrument.** An illustrative signal path maps structure through verification to release.
+
+<img src="./assets/heroes/hero-live-systems.svg" alt="Systems instrument hero study showing an illustrative build, verify, and ship signal path" width="100%" />
+
+**Spatial 3D.** An isometric vector field connects interface, state, and delivery without implying live controls.
+
+<img src="./assets/heroes/hero-spatial.svg" alt="Spatial 3D hero study connecting interface, state, and delivery as an isometric vector field" width="100%" />
+
+</details>
+
+## Principles
+
+Clear state. Deliberate motion. Product intent. Build, verify, and ship with evidence.
 
 ## Contact
 
-For project conversations or collaboration, reach me at [chlwjd022@gmail.com](mailto:chlwjd022@gmail.com).
+[GitHub profile](https://github.com/choijungmua) · [Email](mailto:chlwjd022@gmail.com)
+
+---
+
+<sub>Self-hosted profile artwork with no remote image or stats services.</sub>
