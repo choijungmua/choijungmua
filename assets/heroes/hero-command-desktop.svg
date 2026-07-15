@@ -29,12 +29,19 @@
     .row-text { font-size: 16px; font-weight: 500; }
     .row-meta { font-size: 12px; }
     .active-build, .active-verify { opacity: 0; }
-    .done-build, .done-verify, .active-ship { opacity: 1; }
+    .active-ship { opacity: 1; }
     .active-build { animation: build-active 2.4s linear 1 both; }
-    .done-build { animation: build-done 2.4s linear 1 both; }
     .active-verify { animation: verify-active 2.4s linear 1 both; }
-    .done-verify { animation: verify-done 2.4s linear 1 both; }
     .active-ship { animation: ship-active 2.4s linear 1 both; }
+    .status-build-active, .status-verify-pending, .status-verify-active, .status-ship-pending { opacity: 0; }
+    .status-build-done, .status-verify-done, .status-ship-verified { opacity: 1; }
+    .status-build-active { animation: status-build-active 2.4s steps(1, end) 1 both; }
+    .status-build-done { animation: status-build-done 2.4s steps(1, end) 1 both; }
+    .status-verify-pending { animation: status-verify-pending 2.4s steps(1, end) 1 both; }
+    .status-verify-active { animation: status-verify-active 2.4s steps(1, end) 1 both; }
+    .status-verify-done { animation: status-verify-done 2.4s steps(1, end) 1 both; }
+    .status-ship-pending { animation: status-ship-pending 2.4s steps(1, end) 1 both; }
+    .status-ship-verified { animation: status-ship-verified 2.4s steps(1, end) 1 both; }
     .sequence-marker {
       transform-box: fill-box;
       transform-origin: center;
@@ -45,18 +52,10 @@
       0%, 18% { opacity: 1; transform: translateY(0); }
       27%, 100% { opacity: 0; transform: translateY(2px); }
     }
-    @keyframes build-done {
-      0%, 25% { opacity: 0; transform: translateY(2px); }
-      34%, 100% { opacity: 1; transform: translateY(0); }
-    }
     @keyframes verify-active {
       0%, 27% { opacity: 0; transform: translateY(4px); }
       36%, 56% { opacity: 1; transform: translateY(0); }
       65%, 100% { opacity: 0; transform: translateY(2px); }
-    }
-    @keyframes verify-done {
-      0%, 63% { opacity: 0; transform: translateY(2px); }
-      72%, 100% { opacity: 1; transform: translateY(0); }
     }
     @keyframes ship-active {
       0%, 65% { opacity: 0; transform: translateY(4px); }
@@ -67,10 +66,17 @@
       27%, 56% { transform: translateY(80px); }
       65%, 100% { transform: translateY(160px); }
     }
+    @keyframes status-build-active { 0%, 26% { opacity: 1; } 27%, 100% { opacity: 0; } }
+    @keyframes status-build-done { 0%, 26% { opacity: 0; } 27%, 100% { opacity: 1; } }
+    @keyframes status-verify-pending { 0%, 35% { opacity: 1; } 36%, 100% { opacity: 0; } }
+    @keyframes status-verify-active { 0%, 35% { opacity: 0; } 36%, 64% { opacity: 1; } 65%, 100% { opacity: 0; } }
+    @keyframes status-verify-done { 0%, 64% { opacity: 0; } 65%, 100% { opacity: 1; } }
+    @keyframes status-ship-pending { 0%, 73% { opacity: 1; } 74%, 100% { opacity: 0; } }
+    @keyframes status-ship-verified { 0%, 73% { opacity: 0; } 74%, 100% { opacity: 1; } }
     @media (prefers-reduced-motion: reduce) {
-      .active-build, .done-build, .active-verify, .done-verify, .active-ship, .sequence-marker { animation: none; }
+      .active-build, .active-verify, .active-ship, .sequence-marker, .status-label { animation: none; }
       .active-build, .active-verify { opacity: 0; transform: none; }
-      .done-build, .done-verify, .active-ship { opacity: 1; transform: none; }
+      .active-ship { opacity: 1; transform: none; }
       .sequence-marker { transform: translateY(160px); }
     }
   </style>
@@ -104,15 +110,15 @@
         <rect class="surface border" x="552.5" y="168.5" width="559" height="63" rx="8" />
         <text class="muted mono row-meta" x="576" y="207">01</text>
         <text class="text mono row-text" x="624" y="208">BUILD INTERFACE</text>
-        <text class="muted mono row-meta" x="1020" y="207">PENDING</text>
         <g class="active-build">
           <rect class="surface-muted accent-border" x="552.5" y="168.5" width="559" height="63" rx="8" />
           <text class="accent mono row-meta" x="576" y="207">01</text>
           <text class="text mono row-text" x="624" y="208">BUILD INTERFACE</text>
+        </g>
+        <g class="status-label status-build-active">
           <text class="accent mono row-meta" x="1032" y="207">ACTIVE</text>
         </g>
-        <g class="done-build">
-          <rect class="surface" x="996" y="176" width="104" height="48" />
+        <g class="status-label status-build-done">
           <path class="accent-border" d="M1012 201L1018 207L1028 195" />
           <text class="accent mono row-meta" x="1040" y="207">DONE</text>
         </g>
@@ -122,15 +128,18 @@
         <rect class="surface border" x="552.5" y="248.5" width="559" height="63" rx="8" />
         <text class="muted mono row-meta" x="576" y="287">02</text>
         <text class="text mono row-text" x="624" y="288">VERIFY BEHAVIOR</text>
-        <text class="muted mono row-meta" x="1020" y="287">PENDING</text>
         <g class="active-verify">
           <rect class="surface-muted accent-border" x="552.5" y="248.5" width="559" height="63" rx="8" />
           <text class="accent mono row-meta" x="576" y="287">02</text>
           <text class="text mono row-text" x="624" y="288">VERIFY BEHAVIOR</text>
+        </g>
+        <g class="status-label status-verify-pending">
+          <text class="muted mono row-meta" x="1020" y="287">PENDING</text>
+        </g>
+        <g class="status-label status-verify-active">
           <text class="accent mono row-meta" x="1032" y="287">ACTIVE</text>
         </g>
-        <g class="done-verify">
-          <rect class="surface" x="996" y="256" width="104" height="48" />
+        <g class="status-label status-verify-done">
           <path class="accent-border" d="M1012 281L1018 287L1028 275" />
           <text class="accent mono row-meta" x="1040" y="287">DONE</text>
         </g>
@@ -140,11 +149,15 @@
         <rect class="surface border" x="552.5" y="328.5" width="559" height="63" rx="8" />
         <text class="muted mono row-meta" x="576" y="367">03</text>
         <text class="text mono row-text" x="624" y="368">SHIP EVIDENCE</text>
-        <text class="muted mono row-meta" x="1020" y="367">PENDING</text>
         <g class="active-ship">
           <rect class="surface-muted accent-border" x="552.5" y="328.5" width="559" height="63" rx="8" />
           <text class="accent mono row-meta" x="576" y="367">03</text>
           <text class="text mono row-text" x="624" y="368">SHIP EVIDENCE</text>
+        </g>
+        <g class="status-label status-ship-pending">
+          <text class="muted mono row-meta" x="1020" y="367">PENDING</text>
+        </g>
+        <g class="status-label status-ship-verified">
           <path class="accent-border" d="M1006 361L1012 367L1022 355" />
           <text class="accent mono row-meta" x="1034" y="367">VERIFIED</text>
         </g>
