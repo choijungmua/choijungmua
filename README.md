@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="./assets/profile-hero.svg" alt="CJM, frontend engineer — interface, state, and data represented as a dimensional system" width="100%" />
+
 # CJM
 
 **Frontend engineer building durable interfaces for real products.**
