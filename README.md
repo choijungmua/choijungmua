@@ -1,6 +1,9 @@
 <div align="center">
 
-<img src="./assets/profile-hero.svg" alt="CJM, frontend engineer — interface, state, and data represented as a dimensional system" width="100%" />
+<picture>
+  <source media="(max-width: 480px)" srcset="./assets/profile-hero-mobile.svg" />
+  <img src="./assets/profile-hero.svg" alt="CJM, frontend engineer — interface, state, and data represented as a dimensional system" width="100%" />
+</picture>
 
 # CJM
 
