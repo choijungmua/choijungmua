@@ -29,7 +29,10 @@ test("deploys the Pages artifact with a pinned, least-privilege workflow", async
 
   assert.equal(build["runs-on"], "ubuntu-24.04");
   assert.equal(build["timeout-minutes"], 15);
-  assert.deepEqual(build.permissions, { contents: "read" });
+  assert.deepEqual(build.permissions, {
+    contents: "read",
+    pages: "read",
+  });
   assert.deepEqual(build.steps, [
     {
       name: "Checkout source",
