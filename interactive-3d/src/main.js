@@ -3,6 +3,7 @@ import { Raycaster, Vector2 } from "three";
 import { LAYERS, isLayerId } from "./layers.js";
 import { createSelectionState } from "./scene-state.js";
 import { createScene } from "./scene/create-scene.js";
+import { createRuntimeResources } from "./scene/runtime-resources.js";
 import { createSystemField } from "./scene/create-system-field.js";
 import { createLifecycle } from "./scene/lifecycle.js";
 import "./styles.css";
@@ -71,6 +72,7 @@ const bindCanvasInput = (runtime) => {
   canvas.style.touchAction = finePointer.matches ? "none" : "pan-y pinch-zoom";
   let origin = null;
   let cancelled = false;
+  let dragged = false;
 
   const onPointerDown = (event) => {
     if (!finePointer.matches || event.button !== 0) {
@@ -78,11 +80,22 @@ const bindCanvasInput = (runtime) => {
     }
     origin = { x: event.clientX, y: event.clientY, id: event.pointerId };
     cancelled = false;
+    dragged = false;
+  };
+
+  const onPointerMove = (event) => {
+    if (!origin || event.pointerId !== origin.id) {
+      return;
+    }
+    if (Math.hypot(event.clientX - origin.x, event.clientY - origin.y) > 8) {
+      dragged = true;
+    }
   };
 
   const cancelPointer = () => {
     origin = null;
     cancelled = true;
+    dragged = false;
   };
 
   const onPointerUp = (event) => {
@@ -95,7 +108,8 @@ const bindCanvasInput = (runtime) => {
       event.clientY - origin.y,
     );
     origin = null;
-    if (distance > 8) {
+    if (dragged || distance > 8) {
+      dragged = false;
       return;
     }
     const bounds = canvas.getBoundingClientRect();
@@ -117,6 +131,7 @@ const bindCanvasInput = (runtime) => {
   };
 
   canvas.addEventListener("pointerdown", onPointerDown);
+  canvas.addEventListener("pointermove", onPointerMove);
   canvas.addEventListener("pointerup", onPointerUp);
   canvas.addEventListener("pointercancel", cancelPointer);
   canvas.addEventListener("lostpointercapture", cancelPointer);
@@ -124,6 +139,7 @@ const bindCanvasInput = (runtime) => {
 
   return () => {
     canvas.removeEventListener("pointerdown", onPointerDown);
+    canvas.removeEventListener("pointermove", onPointerMove);
     canvas.removeEventListener("pointerup", onPointerUp);
     canvas.removeEventListener("pointercancel", cancelPointer);
     canvas.removeEventListener("lostpointercapture", cancelPointer);
@@ -132,25 +148,17 @@ const bindCanvasInput = (runtime) => {
 };
 
 const createRuntime = () => {
-  const field = createSystemField();
-  const scene = createScene(canvas, field, canvas.parentElement);
-  const releaseInput = bindCanvasInput({ field, scene });
-  field.selectLayer(selection.selectedLayer);
-  scene.render();
-
-  const runtime = {
-    field,
-    scene,
-    render: scene.render,
-    dispose() {
-      releaseInput();
-      scene.dispose();
-      field.dispose();
-      if (activeRuntime === runtime) {
+  const runtime = createRuntimeResources({
+    createField: createSystemField,
+    createScene: (field) => createScene(canvas, field, canvas.parentElement),
+    bindInput: bindCanvasInput,
+    initialLayer: selection.selectedLayer,
+    onDispose(disposedRuntime) {
+      if (activeRuntime === disposedRuntime) {
         activeRuntime = null;
       }
     },
-  };
+  });
   activeRuntime = runtime;
   return runtime;
 };

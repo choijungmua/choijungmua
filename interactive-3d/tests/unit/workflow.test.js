@@ -42,7 +42,11 @@ test("deploys the Pages artifact with a pinned, least-privilege workflow", async
     },
     {
       name: "Test and build in pinned Node",
-      run: 'docker run --rm --user "$(id -u):$(id -g)" --volume "${{ github.workspace }}:/work:rw" --workdir /work/interactive-3d --env "VITE_BUILD_SHA=${{ github.sha }}" node:24.18.0-bookworm-slim@sha256:6f7b03f7c2c8e2e784dcf9295400527b9b1270fd37b7e9a7285cf83b6951452d sh -lc "npm ci && npm test && npm run check && npm run build"',
+      run: 'docker run --rm --user "$(id -u):$(id -g)" --volume "${{ github.workspace }}:/work:rw" --workdir /work/interactive-3d --env "VITE_BUILD_SHA=${{ github.sha }}" node:24.18.0-bookworm-slim@sha256:6f7b03f7c2c8e2e784dcf9295400527b9b1270fd37b7e9a7285cf83b6951452d sh -lc "npm ci && npm test && npm run check && npm run build && node tests/qa/dist-check.mjs dist /choijungmua/ 250 2048"',
+    },
+    {
+      name: "Run browser release gates",
+      run: 'docker run --rm --init --ipc=host --volume "${{ github.workspace }}:/work:rw" --workdir /work/interactive-3d --env "CI=true" --env "PLAYWRIGHT_CHANNEL=chromium" mcr.microsoft.com/playwright:v1.61.1-noble@sha256:5b8f294aff9041b7191c34a4bab3ac270157a28774d4b0660e9743297b697e48 sh -lc "npm run test:e2e"',
     },
     {
       name: "Upload Pages artifact",

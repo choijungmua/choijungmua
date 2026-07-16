@@ -23,6 +23,42 @@ test("fine-pointer drag changes the scene and passive wheel preserves page scrol
   expect(await page.evaluate(() => scrollY)).toBeGreaterThan(0);
 });
 
+test("an out-and-back drag never becomes a layer click", async ({ page }) => {
+  await page.goto("./");
+  const canvas = page.locator("#system-canvas");
+  const bounds = await canvas.boundingBox();
+  expect(bounds).not.toBeNull();
+  const center = {
+    x: bounds.x + bounds.width / 2,
+    y: bounds.y + bounds.height / 2,
+  };
+
+  await expect(page.locator("#layer-interface")).toBeChecked();
+  await page.mouse.move(center.x, center.y);
+  await page.mouse.down();
+  await page.mouse.move(center.x + 40, center.y, { steps: 4 });
+  await page.mouse.move(center.x, center.y, { steps: 4 });
+  await page.mouse.up();
+
+  await expect(page.locator("#layer-interface")).toBeChecked();
+  await expect(page.locator("#scene-status")).not.toContainText("layer selected");
+});
+
+test("a stationary canvas click selects the raycast layer", async ({ page }) => {
+  await page.goto("./");
+  const canvas = page.locator("#system-canvas");
+  const bounds = await canvas.boundingBox();
+  expect(bounds).not.toBeNull();
+
+  await page.mouse.click(
+    bounds.x + bounds.width / 2,
+    bounds.y + bounds.height / 2,
+  );
+
+  await expect(page.locator("#layer-state")).toBeChecked();
+  await expect(page.locator("#scene-status")).toHaveText("State layer selected.");
+});
+
 test("coarse pointer retains HTML control parity and native touch action", async ({
   browser,
 }) => {

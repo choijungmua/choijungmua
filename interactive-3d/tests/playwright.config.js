@@ -2,6 +2,7 @@ import { resolve } from "node:path";
 import { defineConfig } from "@playwright/test";
 
 const previewPort = Number.parseInt(process.env.PREVIEW_PORT ?? "4173", 10);
+const browserChannel = process.env.PLAYWRIGHT_CHANNEL ?? "chrome";
 const defaultEvidence = resolve(
   process.cwd(),
   "../.omo/evidence/interactive-3d-profile/playwright-default",
@@ -27,13 +28,13 @@ export default defineConfig({
     {
       name: "chrome",
       testIgnore: /fallback\.spec\.js/,
-      use: { channel: "chrome" },
+      use: { channel: browserChannel },
     },
     {
       name: "no-webgl",
       testMatch: /fallback\.spec\.js/,
       use: {
-        channel: "chrome",
+        channel: browserChannel,
         launchOptions: { args: ["--disable-webgl"] },
       },
     },

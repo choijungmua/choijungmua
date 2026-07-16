@@ -32,29 +32,58 @@ export function createScene(canvas, field, container, dependencies = {}) {
   camera.position.set(...DEFAULT_POSITION);
   camera.zoom = 1;
 
-  const renderer = new Renderer({
-    canvas,
-    antialias: true,
-    alpha: false,
-    powerPreference: "high-performance",
-  });
-  renderer.setClearColor(0x0b0d10, 1);
-  renderer.outputColorSpace = SRGBColorSpace;
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-
-  const controls = new Controls(camera, canvas);
-  controls.target.set(...DEFAULT_TARGET);
-  controls.enableDamping = false;
-  controls.enablePan = false;
-  controls.enableZoom = false;
-  controls.autoRotate = false;
-  controls.minPolarAngle = 0.85;
-  controls.maxPolarAngle = 1.35;
-  controls.minAzimuthAngle = AZIMUTH_RANGE[0];
-  controls.maxAzimuthAngle = AZIMUTH_RANGE[1];
-  controls.update();
-
+  let renderer = null;
+  let controls = null;
+  let resizeObserver = null;
+  let controlsListening = false;
+  let documentListening = false;
   let disposed = false;
+
+  const releaseResources = () => {
+    resizeObserver?.disconnect();
+    resizeObserver = null;
+    if (documentListening) {
+      documentRef.removeEventListener("visibilitychange", onVisibilityChange);
+      documentListening = false;
+    }
+    if (controlsListening) {
+      controls.removeEventListener("change", onControlsChange);
+      controlsListening = false;
+    }
+    controls?.dispose();
+    controls = null;
+    renderer?.dispose();
+    renderer = null;
+    scene.remove(field.group);
+  };
+
+  try {
+    renderer = new Renderer({
+      canvas,
+      antialias: true,
+      alpha: false,
+      powerPreference: "high-performance",
+    });
+    renderer.setClearColor(0x0b0d10, 1);
+    renderer.outputColorSpace = SRGBColorSpace;
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+
+    controls = new Controls(camera, canvas);
+    controls.target.set(...DEFAULT_TARGET);
+    controls.enableDamping = false;
+    controls.enablePan = false;
+    controls.enableZoom = false;
+    controls.autoRotate = false;
+    controls.minPolarAngle = 0.85;
+    controls.maxPolarAngle = 1.35;
+    controls.minAzimuthAngle = AZIMUTH_RANGE[0];
+    controls.maxAzimuthAngle = AZIMUTH_RANGE[1];
+    controls.update();
+  } catch (error) {
+    disposed = true;
+    releaseResources();
+    throw error;
+  }
 
   const render = () => {
     if (!disposed) {
@@ -132,10 +161,18 @@ export function createScene(canvas, field, container, dependencies = {}) {
     }
   };
   controls.addEventListener("change", onControlsChange);
+  controlsListening = true;
   documentRef.addEventListener("visibilitychange", onVisibilityChange);
-  const resizeObserver = new ResizeObserverCtor(resize);
-  resizeObserver.observe(container);
-  resize();
+  documentListening = true;
+  try {
+    resizeObserver = new ResizeObserverCtor(resize);
+    resizeObserver.observe(container);
+    resize();
+  } catch (error) {
+    disposed = true;
+    releaseResources();
+    throw error;
+  }
 
   return Object.freeze({
     renderer,
@@ -151,12 +188,7 @@ export function createScene(canvas, field, container, dependencies = {}) {
         return;
       }
       disposed = true;
-      resizeObserver.disconnect();
-      documentRef.removeEventListener("visibilitychange", onVisibilityChange);
-      controls.removeEventListener("change", onControlsChange);
-      controls.dispose();
-      renderer.dispose();
-      scene.remove(field.group);
+      releaseResources();
     },
   });
 }
