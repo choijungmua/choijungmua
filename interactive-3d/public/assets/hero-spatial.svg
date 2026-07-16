@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Interface, state, and delivery system field</title>
+  <desc id="desc">Three dark isometric layers connected by a blue route on a technical grid.</desc>
+  <rect width="900" height="620" fill="#0b0d10"/>
+  <g fill="none" stroke="#30363d" stroke-width="1">
+    <path d="M120 490h660M120 450h660M120 410h660M120 370h660M120 330h660M120 290h660"/>
+    <path d="m210 540 300-300M300 560l300-300M390 580l300-300M480 600l300-300M120 500l300-300M120 410l240-240"/>
+  </g>
+  <g stroke="#6e7681" stroke-width="2" stroke-linejoin="round">
+    <path d="m215 215 250-95 220 76-250 98z" fill="#181d24"/>
+    <path d="m215 215 220 79v38l-220-80z" fill="#0b0d10"/>
+    <path d="m435 294 250-98v38l-250 98z" fill="#11151a"/>
+    <path d="m215 325 250-95 220 76-250 98z" fill="#181d24"/>
+    <path d="m215 325 220 79v38l-220-80z" fill="#0b0d10"/>
+    <path d="m435 404 250-98v38l-250 98z" fill="#11151a"/>
+    <path d="m215 435 250-95 220 76-250 98z" fill="#181d24"/>
+    <path d="m215 435 220 79v38l-220-80z" fill="#0b0d10"/>
+    <path d="m435 514 250-98v38l-250 98z" fill="#11151a"/>
+  </g>
+  <g fill="#6e7681">
+    <rect x="315" y="202" width="20" height="14"/><rect x="450" y="162" width="20" height="14"/><rect x="565" y="200" width="20" height="14"/>
+    <rect x="315" y="312" width="20" height="14"/><rect x="450" y="272" width="20" height="14"/><rect x="565" y="310" width="20" height="14"/>
+    <rect x="315" y="422" width="20" height="14"/><rect x="450" y="382" width="20" height="14"/><rect x="565" y="420" width="20" height="14"/>
+  </g>
+  <path d="M325 209 460 169 575 317 460 499" fill="none" stroke="#58a6ff" stroke-width="5" stroke-linecap="square" stroke-linejoin="round"/>
+  <g fill="#f0f3f6" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="18">
+    <text x="100" y="125">INTERFACE</text>
+    <text x="100" y="345">STATE</text>
+    <text x="100" y="565">DELIVERY</text>
+  </g>
+</svg>

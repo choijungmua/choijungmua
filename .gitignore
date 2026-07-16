@@ -1,0 +1,6 @@
+/interactive-3d/node_modules/
+/interactive-3d/dist/
+/interactive-3d/.vite/
+/interactive-3d/coverage/
+/interactive-3d/test-results/
+/interactive-3d/playwright-report/

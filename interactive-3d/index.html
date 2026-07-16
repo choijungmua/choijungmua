@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A real-time Three.js study of interface, state, and delivery."
+    />
+    <meta name="theme-color" content="#0b0d10" />
+    <meta property="og:title" content="CJM — Interactive system field" />
+    <meta
+      property="og:description"
+      content="A real-time Three.js study of interface, state, and delivery."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://choijungmua.github.io/choijungmua/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="build-sha" content="%VITE_BUILD_SHA%" />
+    <link rel="canonical" href="https://choijungmua.github.io/choijungmua/" />
+    <link rel="icon" href="data:," />
+    <title>CJM — Interactive system field</title>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to the interactive study</a>
+    <main id="main-content">
+      <article
+        id="profile-app"
+        class="experience"
+        data-build-sha="%VITE_BUILD_SHA%"
+        data-lifecycle="static"
+      >
+        <header class="intro">
+          <a class="identity" href="https://github.com/choijungmua">
+            <span class="identity-mark" aria-hidden="true">CJM</span>
+            <span>Product-minded frontend engineer</span>
+          </a>
+          <p class="eyebrow">INTERACTIVE SYSTEM FIELD / THREE.JS</p>
+          <h1>Interface systems,<br />explored in 3D.</h1>
+          <p class="lead">
+            Drag to orbit on desktop, or use the controls to inspect each layer.
+          </p>
+        </header>
+
+        <section class="explorer" aria-labelledby="scene-heading">
+          <div class="scene-column">
+            <h2 id="scene-heading" class="visually-hidden">Interactive system field</h2>
+            <div class="scene-frame">
+              <div
+                id="static-poster"
+                class="static-poster"
+                role="img"
+                aria-label="A static isometric field showing interface, state, and delivery layers"
+              ></div>
+              <canvas
+                id="system-canvas"
+                aria-hidden="true"
+                tabindex="-1"
+                hidden
+              ></canvas>
+              <div class="scene-caption" aria-hidden="true">
+                <span>ORTHOGRAPHIC FIELD</span>
+                <span>ON-DEMAND RENDER</span>
+              </div>
+            </div>
+
+            <div id="view-controls" class="view-controls" hidden>
+              <button id="view-rotate-left" type="button" aria-label="Rotate view left">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 7H4v4M4.6 9.2A8 8 0 1 1 5 15" />
+                </svg>
+              </button>
+              <button id="view-rotate-right" type="button" aria-label="Rotate view right">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M16 7h4v4m-.6-1.8A8 8 0 1 0 19 15" />
+                </svg>
+              </button>
+              <span class="control-rule" aria-hidden="true"></span>
+              <button id="view-zoom-out" type="button" aria-label="Zoom out">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="10.5" cy="10.5" r="6.5" />
+                  <path d="M6.8 10.5h7.4M15.5 15.5 21 21" />
+                </svg>
+              </button>
+              <button id="view-zoom-in" type="button" aria-label="Zoom in">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="10.5" cy="10.5" r="6.5" />
+                  <path d="M10.5 6.8v7.4m-3.7-3.7h7.4M15.5 15.5 21 21" />
+                </svg>
+              </button>
+              <button id="view-reset" class="reset-control" type="button">Reset view</button>
+            </div>
+          </div>
+
+          <div class="details-column">
+            <fieldset id="layer-fieldset" class="layer-fieldset">
+              <legend>Inspect a layer</legend>
+              <label class="layer-option" for="layer-interface">
+                <input
+                  id="layer-interface"
+                  type="radio"
+                  name="layer"
+                  value="interface"
+                  checked
+                />
+                <span class="option-index">01</span>
+                <span class="option-copy">
+                  <strong>Interface</strong>
+                  <small>Hierarchy and usable states</small>
+                </span>
+              </label>
+              <label class="layer-option" for="layer-state">
+                <input id="layer-state" type="radio" name="layer" value="state" />
+                <span class="option-index">02</span>
+                <span class="option-copy">
+                  <strong>State</strong>
+                  <small>Understandable behavior</small>
+                </span>
+              </label>
+              <label class="layer-option" for="layer-delivery">
+                <input id="layer-delivery" type="radio" name="layer" value="delivery" />
+                <span class="option-index">03</span>
+                <span class="option-copy">
+                  <strong>Delivery</strong>
+                  <small>Build and ship with evidence</small>
+                </span>
+              </label>
+            </fieldset>
+
+            <section id="layer-detail" class="layer-detail" aria-live="off">
+              <p class="detail-label">SELECTED LAYER</p>
+              <h2 data-detail-title>Interface</h2>
+              <p data-detail-body>
+                Responsive product UI shaped around clear hierarchy and usable states.
+              </p>
+            </section>
+
+            <div class="layer-summaries">
+              <p><strong>Interface</strong> — Responsive product UI shaped around clear hierarchy and usable states.</p>
+              <p><strong>State</strong> — Clear state and maintainable structure keep behavior understandable.</p>
+              <p><strong>Delivery</strong> — Practical automation helps build, verify, and ship with evidence.</p>
+            </div>
+
+            <button id="retry-3d" class="retry-control" type="button" hidden>
+              Retry 3D
+            </button>
+            <p id="scene-status" class="scene-status" aria-live="polite" aria-atomic="true"></p>
+            <a id="profile-return" class="return-link" href="https://github.com/choijungmua">
+              Back to GitHub profile
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14m-5-5 5 5-5 5" />
+              </svg>
+            </a>
+          </div>
+        </section>
+      </article>
+    </main>
+    <noscript>
+      <p class="noscript-note">
+        The static system field and all layer descriptions remain available without JavaScript.
+      </p>
+    </noscript>
+  </body>
+</html>
