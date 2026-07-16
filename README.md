@@ -8,6 +8,8 @@
 
 I focus on responsive product UI, maintainable structure, and practical delivery automation.
 
+[Launch the interactive 3D system](https://choijungmua.github.io/choijungmua/)
+
 ## Selected work
 
 - **ClickPick** — A map-based community for discovering and sharing places, with posts, profiles, and admin tools. [ClickPick source](https://github.com/ClickPickProject/FrontEnd) · [ClickPick live site](https://clickpick.vercel.app)
@@ -38,6 +40,8 @@ Three profile studies use finite self-hosted SVG motion, while Spatial 3D is a p
 **Spatial 3D.** An isometric vector field connects interface, state, and delivery without implying live controls.
 
 <img src="./assets/heroes/hero-spatial.svg" alt="Spatial 3D hero study connecting interface, state, and delivery as an isometric vector field" width="100%" />
+
+[Open the real-time Spatial 3D study](https://choijungmua.github.io/choijungmua/)
 
 </details>
 
