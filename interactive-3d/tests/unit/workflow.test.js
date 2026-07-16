@@ -45,7 +45,7 @@ test("deploys the Pages artifact with a pinned, least-privilege workflow", async
     },
     {
       name: "Test and build in pinned Node",
-      run: 'docker run --rm --user "$(id -u):$(id -g)" --volume "${{ github.workspace }}:/work:rw" --workdir /work/interactive-3d --env "VITE_BUILD_SHA=${{ github.sha }}" node:24.18.0-bookworm-slim@sha256:6f7b03f7c2c8e2e784dcf9295400527b9b1270fd37b7e9a7285cf83b6951452d sh -lc "npm ci && npm test && npm run check && npm run build && node tests/qa/dist-check.mjs dist /choijungmua/ 250 2048"',
+      run: 'docker run --rm --user "$(id -u):$(id -g)" --volume "${{ github.workspace }}:/work:rw" --workdir /work/interactive-3d --env "HOME=/tmp" --env "npm_config_cache=/tmp/.npm" --env "VITE_BUILD_SHA=${{ github.sha }}" node:24.18.0-bookworm-slim@sha256:6f7b03f7c2c8e2e784dcf9295400527b9b1270fd37b7e9a7285cf83b6951452d sh -lc "npm ci && npm test && npm run check && npm run build && node tests/qa/dist-check.mjs dist /choijungmua/ 250 2048"',
     },
     {
       name: "Run browser release gates",
